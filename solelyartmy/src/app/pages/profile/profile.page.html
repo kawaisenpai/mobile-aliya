@@ -1,0 +1,39 @@
+
+<ion-header>
+	<ion-toolbar>
+	  <ion-title>Home</ion-title>
+	  <ion-buttons slot="start">
+		<ion-menu-button>
+		</ion-menu-button>
+	  </ion-buttons>
+	  
+	  <ion-buttons slot="end">
+		<ion-button color="dark" (click)="logOut()" >Logout</ion-button>
+	  </ion-buttons>
+  
+  </ion-toolbar>
+  </ion-header>
+
+  
+    <ion-content fullscreen>
+  
+		<ion-list>
+		  <ion-list-header></ion-list-header>
+		  <ion-item>
+			<ion-thumbnail slot="start">
+				<ion-buttons>
+					<ion-button>
+					<ion-icon name="bag" size="large" color="dark"></ion-icon>
+					</ion-button>
+				  </ion-buttons>
+			</ion-thumbnail>
+
+			<ion-label>
+				<ion-button color="dark" fill="clear" routerLink="/track">
+					Order Tracking
+				</ion-button>
+			</ion-label>
+		  </ion-item>
+
+		  </ion-list>
+  </ion-content>

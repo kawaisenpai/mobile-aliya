@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Art</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+      </ion-menu-button>
+    </ion-buttons>
+    
+    <ion-buttons slot="end" routerLink="/feed-admin">
+      <ion-button color="dark">
+      Post
+      </ion-button>
+    </ion-buttons>
+
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content>
+   
+
+    <div class="title ion-padding">
+      <h2>Art Category</h2>
+      
+    </div>
+  
+    <div class="category-slider ion-padding-start">
+      <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+        <ion-slide routerLink="{{category.router}}" *ngFor="let category of categories">
+          <ion-col>
+            <h4>{{ category.name }}</h4>
+            <img src="{{ category.image }}" />
+           
+          </ion-col>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  
+    <div class="title ion-padding">
+      <h4>Featured</h4>
+    </div>
+  
+    <ion-card *ngFor="let post of feed" class="ion-text-center">
+     
+        <p>  {{post.username}} </p>
+  
+ 
+  
+        <ion-item lines="none">
+          <ion-img [src]="post.images"></ion-img>
+      </ion-item>
+    
+      <ion-card-header>
+     <p>  {{post.caption}}  </p>
+</ion-card-header>
+
+    </ion-card>
+
+    <ion-card class="ion-text-center">
+      <p>  ainmezz </p>
+      <img src='../../assets/mez.jpeg'>
+      <p>  good morning </p>
+    </ion-card>
+
+    <ion-card class="ion-text-center">
+      <p>  bungadanbintang </p>
+      <img src='../../assets/bb.jpeg'>
+      <p>  get this in my shop @bungadanbintang </p>
+    </ion-card>
+
+    <ion-card class="ion-text-center">
+      <p>  nothumaria </p>
+      <img src='../../assets/cc.jpeg'>
+      <p> my journal essential  </p>
+    </ion-card>
+
+    
+
+  </ion-content>
+</ion-content>

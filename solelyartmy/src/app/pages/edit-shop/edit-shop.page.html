@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edit Shop</ion-title>
+    <ion-buttons slot="start" routerLink="/seller">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar> 
+</ion-header> 
+  
+ 
+
+<ion-content class="ion-padding">
+  <form [formGroup]="productForm">
+    <ion-item>
+      <ion-label position="stacked">Product Name</ion-label>
+      <ion-input formControlName="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Price (RM)</ion-label>
+      <ion-input formControlName="price" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Description</ion-label>
+      <ion-input formControlName="desc" ></ion-input>
+    </ion-item>
+
+    <div class="image-container">
+      
+        <ion-img *ngIf="imageUrl" [src]="imageUrl" class="image-preview"> </ion-img>
+      
+
+     
+   <p><ion-icon name="image-outline" size="large"(click)="takePicture()"> </ion-icon>
+    
+      <ion-icon name="trash-outline" size="large" (click)="deleteProduct()" ></ion-icon>
+   </p>
+
+    <div class="gradient-btn">
+     
+       <ion-button shape="round" expand="block" color="dark" (click)="updateProduct()">Save</ion-button>
+    </div>
+
+    </div>
+  </form>
+</ion-content>

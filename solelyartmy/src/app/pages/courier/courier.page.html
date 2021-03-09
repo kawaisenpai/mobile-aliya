@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tracking</ion-title>
+    <ion-buttons slot="start" routerLink="/seller">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="ion-padding">
+
+    <ion-text color="dark">
+      <p> Customer Tracking Details </p>
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="stacked">Customer ID</ion-label>
+      <ion-input type="text" [(ngModel)]="tracking.code" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Name</ion-label>
+      <ion-input type="text" [(ngModel)]="tracking.username" required></ion-input>
+    </ion-item>
+     
+
+    <ion-item>
+      <ion-label position="stacked">Number Tracking</ion-label>
+      <ion-input [(ngModel)]="tracking.number"></ion-input>
+    </ion-item>
+   
+
+    <ion-button expand="block" color="dark" (click)="createPost(tracking)">
+      <ion-icon slot="end"></ion-icon>
+      Add
+    </ion-button>
+
+
+   </div>
+</ion-content>
+
+

@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Order Details</ion-title>
+    <ion-buttons slot="start" routerLink="/cart">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="ion-padding">
+
+    <ion-text color="dark">
+      <p> Customer Details </p>
+    </ion-text>
+
+
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="post.email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Name</ion-label>
+      <ion-input type="text" [(ngModel)]="post.username" required></ion-input>
+    </ion-item>
+    
+
+    <ion-item>
+      <ion-label position="stacked">Number</ion-label>
+      <ion-input [(ngModel)]="post.number"></ion-input>
+    </ion-item>
+   
+    <ion-item>
+      <ion-label position="stacked">Address</ion-label>
+      <ion-input type="text" [(ngModel)]="post.address" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-radio-group [(ngModel)]="post.delivery">
+        <ion-list-header>
+          <ion-label>Delivery</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label><p>West Malaysia (RM7)</p></ion-label>
+          <ion-radio  slot="end" color="dark" value="7"></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label> <p>East Malaysia (RM10)</p></ion-label>
+          <ion-radio slot="end" color="dark" value="10"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-item>
+
+    <p>Total: RM{{getTotal()}}</p>
+  <p>  <ion-label color="dark">Pay to Maybank: 16212345678912 (Noraliya Farisha)</ion-label></p>
+ 
+
+    <ion-button expand="block" color="dark" (click)="createPost(post)">
+      <ion-icon slot="end" name="bag"></ion-icon>
+      Buy Now
+    </ion-button>
+
+
+   </div>
+</ion-content>
+
+

@@ -1,0 +1,33 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        
+      </ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end" routerLink="/guest">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+     
+</ion-toolbar>
+</ion-header>
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom" color="light">
+    <ion-tab-button tab="/home/feed">
+      <ion-icon name="image"></ion-icon>
+      <ion-label>Feed</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="/home/shop">
+      <ion-icon name="storefront"></ion-icon>
+      <ion-label>Shop</ion-label>
+    </ion-tab-button>
+  
+  </ion-tab-bar>
+
+</ion-tabs>

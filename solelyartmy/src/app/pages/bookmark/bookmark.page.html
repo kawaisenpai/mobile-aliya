@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bookmark</ion-title>
+    <ion-buttons slot="start" routerLink="/home/shop">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of products">
+     
+    <ion-item lines="none">
+     <p> <ion-img [src]="product.imageUrl"></ion-img></p>
+  </ion-item>
+
+    <ion-item>
+   <ion-text> 
+     <ion-label> <p> Name: </p></ion-label>
+       <p>{{product.name}}</p>
+
+
+       <ion-label><p>Price:</p></ion-label>
+     <p> RM {{product.price}} </p> 
+
+     <ion-label> <p>Product Description:<p>  </ion-label>
+
+  <p> {{product.desc}} </p>
+
+       
+      </ion-text>
+      
+  </ion-item>
+  </ion-card>
+</ion-content>

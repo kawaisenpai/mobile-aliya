@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+  
+    <ion-buttons slot="start" routerLink="/login">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end" routerLink="/login">
+      <ion-button color="dark">
+        Login
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+
+
+  <div class="ion-padding">
+
+  <form class="form" [formGroup]="registerform" (ngSubmit)="loginUser(registerform.value)">
+ <div class="flex-item" style="margin-top: 7vh">
+<ion-item>
+      <ion-label position="stacked" color="dark">Email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+  </div>
+
+  <div class="flex-item">
+    <ion-item>
+      <ion-label position="stacked" color="dark">Password</ion-label>
+      <ion-input type="password" formControlName="password" class="form-control" required></ion-input>
+    </ion-item>
+</div>
+
+
+    <ion-button expand="block" share="round" class="submit-btn" type="submit" (click)="handleRegister()" shape="round" color="dark">Register</ion-button>
+
+  </form>
+ </div>

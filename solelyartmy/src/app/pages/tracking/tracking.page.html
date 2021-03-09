@@ -1,0 +1,131 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tracking</ion-title>
+    <ion-buttons slot="start" routerLink="/order-cust">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end" routerLink="/courier">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+  
+
+<ion-content class="ion-padding">
+<ion-label>Customer Tracking</ion-label>
+ <ion-card *ngFor="let tracking of trackings">
+<ion-item> 
+  <iom-label>
+   Customer ID: {{tracking.code}}
+  </iom-label>
+</ion-item>
+
+<ion-item> 
+  <iom-label>
+   Customer Name: {{tracking.username}}
+  </iom-label>
+</ion-item>
+
+<ion-item> 
+  <iom-label>
+  Customer Tracking:  {{tracking.number}}
+  </iom-label>
+</ion-item>
+
+</ion-card>
+
+<ion-card>
+  <ion-item> 
+    <iom-label>
+     Customer ID: 03 (ABX)
+    </iom-label>
+  </ion-item>
+  
+  <ion-item> 
+    <iom-label>
+     Customer Name: Nurain
+    </iom-label>
+  </ion-item>
+  
+  <ion-item> 
+    <iom-label>
+    Customer Tracking:  KWELD3602121419
+    </iom-label>
+  </ion-item>
+  
+  </ion-card>
+
+  <ion-card>
+    <ion-item> 
+      <iom-label>
+       Customer ID: 05 (ABX)
+      </iom-label>
+    </ion-item>
+    
+    <ion-item> 
+      <iom-label>
+       Customer Name: Alisa
+      </iom-label>
+    </ion-item>
+    
+    <ion-item> 
+      <iom-label>
+      Customer Tracking:  KWELD3602121143
+      </iom-label>
+    </ion-item>
+    
+    </ion-card>
+
+    <ion-card>
+      <ion-item> 
+        <iom-label>
+         Customer ID: 04 (CityLink)
+        </iom-label>
+      </ion-item>
+      
+      <ion-item> 
+        <iom-label>
+         Customer Name: Afiqah Muhammad
+        </iom-label>
+      </ion-item>
+      
+      <ion-item> 
+        <iom-label>
+        Customer Tracking:  060301856587375
+        </iom-label>
+      </ion-item>
+      
+      </ion-card>
+
+      
+
+      <ion-card>
+        <ion-item> 
+          <iom-label>
+           Customer ID: 06 (ABX)
+          </iom-label>
+        </ion-item>
+        
+        <ion-item> 
+          <iom-label>
+           Customer Name: Nur Fatin Izzati
+          </iom-label>
+        </ion-item>
+        
+        <ion-item> 
+          <iom-label>
+          Customer Tracking:  KWELD3332121113
+          </iom-label>
+        </ion-item>
+        
+        </ion-card>
+      
+  
+
+</ion-content>

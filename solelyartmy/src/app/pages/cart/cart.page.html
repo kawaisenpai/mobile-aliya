@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cart</ion-title>
+    <ion-buttons slot="start" routerLink="/home/shop">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" >
+  <form [formGroup]="cartForm">
+
+    <ng-container *ngIf="cartProducts.length > 0">
+    <ion-row *ngFor="let product of cartProducts">
+
+        <ion-col size="10">
+         <ion-img [src]="product.imageUrl"></ion-img> 
+      <ion-label> <p class="product-name">{{product.name}}</p> </ion-label>
+        <ion-label> <p class="product-price">RM {{product.price}} </p> </ion-label>
+        </ion-col>
+
+        <ion-col size="12">
+        <ion-item lines="full">
+        <ion-icon size="small" name="remove-outline" (click)="removeProduct(item)"></ion-icon>
+        <ion-badge color="dark">{{product.selectedAmount}}</ion-badge>
+      
+      </ion-item>
+    
+
+  
+      <ion-item lines="full">
+  <ion-label color="dark">Item Total: RM{{calculatePrice(product)}}</ion-label>
+  </ion-item>
+    </ion-col>
+
+   </ion-row>
+
+    </ng-container>
+  </form>
+
+
+
+  <ng-container style="height: 100%">
+    <div *ngIf="cartProducts.length == 0" class="flex-center">
+      <p>Your cart is empty</p></div>  
+  </ng-container>
+</ion-content>
+
+<ion-footer *ngIf="cartProducts.length > 0">
+  <p>Total: RM{{getTotal()}}</p>
+  <ion-button class="order-button" color="dark" (click)="checkOut()" size="small">Proceed Order</ion-button>
+</ion-footer>
+

@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Shop</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        
+      </ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end" routerLink="/cart">
+      <ion-button class="cart">
+      <ion-icon name="cart" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  
+    
+    <ion-buttons slot="end" routerLink="/checkout">
+      <ion-button class="order">
+        <ion-icon name="bag-check" color="dark"></ion-icon>
+         </ion-button>
+   </ion-buttons>
+
+   
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card *ngFor="let item of products">
+     
+      <ion-item lines="none">
+       <p> <ion-img [src]="item.imageUrl"></ion-img></p>
+    </ion-item>
+  
+      <ion-item>
+     <ion-text> 
+       <ion-label> <p> Name: </p></ion-label>
+         <p>{{item.name}}</p>
+
+
+         <ion-label><p>Price:</p></ion-label>
+       <p> RM {{item.price}} </p> 
+
+       <ion-label> <p>Product Description:<p>  </ion-label>
+
+    <p> {{item.desc}} </p>
+  
+         
+        </ion-text>
+        
+    </ion-item>
+
+  
+
+        <div class="gradient-btn">
+          <ion-button 
+          (click)="addToCart(item)"
+          expand="block" 
+          fill="clear"
+           
+          size="small"
+          color="dark">Add To cart</ion-button> 
+        </div>
+
+       
+    
+
+</ion-card>
+</ion-content>
+
+

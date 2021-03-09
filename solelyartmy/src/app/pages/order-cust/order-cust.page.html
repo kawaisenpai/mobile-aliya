@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Customer Details</ion-title>
+    <ion-buttons slot="start" routerLink="/seller">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end" routerLink="/tracking">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="bag-check-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+  
+  <ion-item-sliding *ngFor="let post of posts">
+    <ion-item class="no-padding">
+      <ion-label>
+          <p> Email: {{ post.email}}</p>
+          <p>Name: {{ post.username }}</p>
+          <p>Number: {{ post.number }}</p>
+          <p>Address: {{ post.address }}</p>
+          <p>Delivery: RM {{ post.delivery }}</p>
+          <p>Item: &nbsp; &nbsp; Quantity:</p>
+          <p>D1  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  1</p>
+          <p>S1  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  2</p>
+          <p>J1  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  1</p>
+          <p>Total: RM19.5</p>
+      </ion-label>
+    </ion-item>
+ 
+
+    <ion-item-options side="end">
+      <ion-item-option color="danger" (click)="deletePost(post.id)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+</ion-item-sliding>
+
+
+</ion-content> 

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Account Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        
+      </ion-menu-button>
+    </ion-buttons>
+
+    
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card color="light">
+  
+  <form [formGroup]="accountform">
+    <ion-item>
+      <ion-icon slot="start" name="mail"></ion-icon>
+      <ion-label position="stacked"></ion-label>
+      <ion-input
+        formControlName="email"
+        readonly
+        placeholder="Email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="person"></ion-icon>
+      <ion-label position="stacked"></ion-label>
+      <ion-input formControlName="username" placeholder="Username"></ion-input>
+    </ion-item>
+    
+
+    <ion-item>
+      <ion-icon slot="start" name="call"></ion-icon>
+      <ion-label position="stacked"></ion-label>
+      <ion-input formControlName="number" placeholder="Phone Number"></ion-input>
+    </ion-item>
+  
+
+  <ion-item>
+  
+    <ion-buttons slot="end" >
+      <ion-button color="dark" (click)="updateUser()">Save &nbsp;
+      <ion-icon size="large" name="checkmark-circle" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-item>
+</form>
+</ion-card>
+</ion-content>
+

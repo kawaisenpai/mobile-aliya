@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title>Your Post</ion-title>
+
+
+    <ion-buttons slot="start" routerLink="/home/feed">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end" routerLink="/feed-post">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="add-circle-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card" (click)="feedClicked(feed.id)" *ngFor="let feed of feed">
+  
+  <ion-item lines="none">
+      <ion-img [src]="feed.images"></ion-img>
+  </ion-item>
+
+  <ion-item>
+      <ion-text>
+        <p>  {{feed.caption}}  </p>
+       
+      </ion-text>
+      
+  </ion-item>
+
+</ion-card>
+</ion-content>

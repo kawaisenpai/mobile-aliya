@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title>Products</ion-title>
+
+
+    <ion-buttons slot="start" (click)="logOut()">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end" routerLink="/uploader">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="add-circle-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end" routerLink="/order-cust">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="receipt-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card" (click)="productClicked(product.id)" *ngFor="let product of products">
+  
+  <ion-item lines="none">
+      <ion-img [src]="product.imageUrl"></ion-img>
+  </ion-item>
+
+<ion-item>
+  <ion-label>
+      <ion-text> <p> {{product.name}} </p>
+        <p> RM {{product.price}} </p>
+
+       
+        <p> Description: {{product.desc}} </p>
+     
+ 
+ <p><ion-button  size="small" routerLink="/edit-shop" color="dark">Edit</ion-button></p>
+      </ion-text>
+      
+  </ion-label>
+</ion-item>
+</ion-card>
+</ion-content>

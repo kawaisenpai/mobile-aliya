@@ -1,0 +1,33 @@
+ion-toolbar {
+  --background: #BAB27D;
+
+}
+ion-title {
+  font-style: inherit;
+  font-size: large;
+  font-weight: bold;
+
+}
+ion-menu-button {
+  margin-left: 10px;
+  color: #000
+}
+
+.toolbar-icon {
+  font-size: 30px;
+  padding-right: 5px;
+}
+ion-avatar {
+  --border-radius: 5px;
+  height: 50px;
+  width: 50px;
+}
+ion-card {
+  padding: 15px 3px;
+  ion-item {
+    --background: transparent;
+  }
+  ion-list {
+    background: transparent !important;
+  }
+}

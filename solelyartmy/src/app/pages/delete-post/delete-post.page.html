@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Delete Post</ion-title>
+    <ion-buttons slot="start" routerLink="/feed-admin">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar> 
+</ion-header>
+ 
+
+
+<ion-content class="ion-padding">
+
+  <form [formGroup]="feed">
+
+    <ion-item>
+      <ion-input formControlName="caption"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input formControlName="username" ></ion-input>
+    </ion-item>
+
+    <div class="image-container">
+    <ion-img *ngIf="images" [src]="images"> </ion-img>
+
+   <p><ion-icon 
+    name="trash-outline" 
+    size="large" 
+    (click)="deleteFeed()" >
+   </ion-icon></p>
+   
+    </div>
+    
+  </form>
+</ion-content> 
